@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JUMP challenge</title>
+</head>
+
+<body>
+	<script src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+			crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(function(){
+			$("#jump").click(function(){
+				if ($("#left").val()!=""){
+					$("#jump").html("< JUMP");
+					text = document.getElementById("left").value;
+					$("#left").val("");
+					$("#right").val(text);
+				}
+					
+				else if ($("#right").val()!=""){
+					$("#jump").html("JUMP >");
+					text = document.getElementById("right").value;
+					$("#right").val("");
+					$("#left").val(text);
+				}
+					
+			});
+		});
+	
+	</script>
+	<input type="text" id="left" />
+	<button type="button" id="jump">JUMP &gt;</button>
+	<input type="text" id="right" />
+</body>
+</html>
